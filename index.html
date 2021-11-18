@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body style='background-color: ghostwhite;'>
+    <div id='container'>
+    <nav id='navbar'>
+      <header>Css Documentaion</header>
+      <div id='nav-links'>
+        <a class='nav-link' href='#Introduction'>Introduction</a><hr>
+        <a class='nav-link' href='#How_does_CSS_actually_work'>How does CSS actually work</a><hr>
+        <a class='nav-link' href='#Starting_with_some_HTML'>Starting with some HTML</a><hr>
+        <a class='nav-link' href='#Adding_CSS_to_our_document'>Adding CSS to our document</a><hr>
+        <a class='nav-link' href='#Styling_HTML_elements'>Styling HTML elements</a><hr>
+        <a class='nav-link' href='#Changing_the_default_behavior_of_elements'>Changing the default behavior of elements</a><hr>
+        <a class='nav-link' href='#Adding_a_class'>Adding a class</a><hr>
+        <a class='nav-link' href='#Selectors'>Selectors</a>
+      </div>
+    </nav>
+    <main id='main-doc'>
+      <section id='Introduction' class='main-section'>
+      <header>Introduction</header>
+      <article>
+        <p>CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is, with a simple syntax example, and also covers some key terms about the language.
+        As we have mentioned before, CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.</p>
+
+        <p>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you may also come across other markup languages such as SVG or XML.</p>
+      </article>
+    </section>
+
+    <section id='Starting_with_some_HTML' class='main-section'>
+      <header>Starting with some HTML</header>
+      <article>
+        <p>Our starting point is an HTML document. You can copy the code from below if you want to work on your own computer. Save the code below as index.html in a folder on your machine.</p>
+
+        <pre><code><span class="token operator">&lt;</span><span class="token operator">!</span>doctype html<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Getting started <span class="token keyword">with</span> <span class="token constant">CSS</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span><span class="token constant">I</span> am a level one heading<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>This is a paragraph <span class="token keyword">of</span> text<span class="token punctuation">.</span> In the text is a <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>span element<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span> and also a <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://example.com"</span><span class="token operator">&gt;</span>link<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>This is the second paragraph<span class="token punctuation">.</span> It contains an <span class="token operator">&lt;</span>em<span class="token operator">&gt;</span>emphasized<span class="token operator">&lt;</span><span class="token operator">/</span>em<span class="token operator">&gt;</span> element<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Item <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>one<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Item two<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Item <span class="token operator">&lt;</span>em<span class="token operator">&gt;</span>three<span class="token operator">&lt;</span><span class="token operator">/</span>em<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span> </code></pre>
+
+      </article>
+    </section>
+
+    <section id='Adding_CSS_to_our_document' class='main-section'>
+      <header>Adding CSS to our document</header>
+      <article>
+        <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.
+        Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.To link styles.css to index.html add the following line somewhere inside the &lt;head&gt; of the HTML document:</p>
+        <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre> <p>This &lt;link&gt; element tells the browser that we have a stylesheet, using the rel attribute, and the location of that stylesheet as the value of the href attribute. You can test that the CSS works by adding a rule to styles.css. Using your code editor add the following to your CSS file:</p><pre><code>h1 <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of the document should now be red. If that happens, congratulations — you have successfully applied some CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.You can continue to work in styles.css locally, or you can use our interactive editor below to continue with this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML document, just as we have with our document above.</p>
+      </article>
+    </section>
+
+    <section id='How_does_CSS_actually_work' class='main-section'>
+      <header>How does CSS actually work</header>
+      <article>
+        <p>When a browser displays a document, it must combine the document's content with its style information. It processes the document in a number of stages, which we've listed below. Bear in mind that this is a very simplified version of what happens when a browser loads a webpage, and that different browsers will handle the process in different ways. But this is roughly what happens.</p> <ol> <li>The browser loads the HTML (e.g. receives it from the network).</li> <li>It converts the HTML into a DOM (Document Object Model). The DOM represents the document in the computer's memory. The DOM is explained in a bit more detail in the next section.</li> <li>The browser then fetches most of the resources that are linked to by the HTML document, such as embedded images and videos ... and linked CSS! JavaScript is handled a bit later on in the process, and we won't talk about it here to keep things simpler.</li> <li>The browser parses the fetched CSS, and sorts the different rules by their selector types into different "buckets", e.g. element, class, ID, and so on. Based on the selectors it finds, it works out which rules should be applied to which nodes in the DOM, and attaches style to them as required (this intermediate step is called a render tree).</li> <li>The render tree is laid out in the structure it should appear in after the rules have been applied to it.</li> <li>The visual display of the page is shown on the screen (this stage is called painting).</li> </ol>
+      </article>
+    </section>
+
+    <section id='Styling_HTML_elements' class='main-section'>
+      <header>Styling HTML elements</header>
+      <article>
+        <p>By making our heading red we have already demonstrated that we can target and style an HTML element. We do this by targeting an element selector — this is a selector that directly matches an HTML element name. To target all paragraphs in the document you would use the selector p. To turn all paragraphs green you would use:</p>
+        <pre><code>p <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> green<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre>
+        <p>You can target multiple selectors at once, by separating the selectors with a comma. If I want all paragraphs and all list items to be green my rule looks like this:</p>
+        <pre><code>p<span class="token punctuation">,</span> li <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> green<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre>
+      </article>
+    </section>
+
+    <section id='Changing_the_default_behavior_of_elements' class='main-section'>
+      <header>Changing the default behavior of elements</header>
+      <article>
+        <p>When we look at a well-marked up HTML document, even something as simple as our example, we can see how the browser is making the HTML readable by adding some default styling. Headings are large and bold and our list has bullets. This happens because browsers have internal stylesheets containing default styles, which they apply to all pages by default; without them all of the text would run together in a clump and we would have to style everything from scratch. All modern browsers display HTML content by default in pretty much the same way.
+
+        However, you will often want something other than the choice the browser has made. This can be done by choosing the HTML element that you want to change, and using a CSS rule to change the way it looks. A good example is our &lt;ul&gt;, an unordered list. It has list bullets, and if I decide I don't want those bullets I can remove them like so:</p>
+        <pre><code>li <span class="token punctuation">{</span> list<span class="token operator">-</span>style<span class="token operator">-</span>type<span class="token operator">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre>
+      </article>
+    </section>
+
+    <section id='Adding_a_class' class='main-section'>
+      <header>Adding a class</header>
+      <article>
+        <p>So far we have styled elements based on their HTML element names. This works as long as you want all of the elements of that type in your document to look the same. Most of the time that isn't the case and so you will need to find a way to select a subset of the elements without changing the others. The most common way to do this is to add a class to your HTML element and target that class.
+
+        In your HTML document, add a class attribute to the second list item. Your list will now look like this:</p>
+        <pre><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Item one<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"special"</span><span class="token operator">&gt;</span>Item two<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Item <span class="token operator">&lt;</span>em<span class="token operator">&gt;</span>three<span class="token operator">&lt;</span><span class="token operator">/</span>em<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span> </code></pre> <p>In your CSS you can target the class of special by creating a selector that starts with a full stop character. Add the following to your CSS file:</p> <pre><code><span class="token punctuation">.</span>special <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> orange<span class="token punctuation">;</span> font<span class="token operator">-</span>weight<span class="token operator">:</span> bold<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>Save and refresh to see what the result is.</p> <p>You can apply the class of special to any element on your page that you want to have the same look as this list item. For example, you might want the <span> in the paragraph to also be orange and bold. Try adding a class of special to it, then reload your page and see what happens.</span></p> <p>Sometimes you will see rules with a selector that lists the HTML element selector along with the class:</p> <pre><code>li<span class="token punctuation">.</span>special <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> orange<span class="token punctuation">;</span> font<span class="token operator">-</span>weight<span class="token operator">:</span> bold<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>This syntax means "target any li element that has a class of special". If you were to do this then you would no longer be able to apply the class to a <span> or another element by adding the class to it; you would have to add that element to the list of selectors:</span></p> <pre><code>li<span class="token punctuation">.</span>special<span class="token punctuation">,</span> span<span class="token punctuation">.</span>special <span class="token punctuation">{</span> <span class="token literal-property property">color</span><span class="token operator">:</span> orange<span class="token punctuation">;</span> font<span class="token operator">-</span>weight<span class="token operator">:</span> bold<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>As you can imagine, some classes might be applied to many elements and you don't want to have to keep editing your CSS every time something new needs to take on that style. Therefore it is sometimes best to bypass the element and refer to the class, unless you know that you want to create some special rules for one element alone, and perhaps want to make sure they are not applied to other things.</p>
+      </article>
+    </section>
+
+    <section id='Selectors' class='main-section'>
+      <header>Selectors</header>
+      <article>
+        <p>A selector targets HTML to apply styles to content. We have already discovered a variety of selectors in the Getting started with CSS tutorial. If CSS is not applying to content as expected, your selector may not match the way you think it should match.
+
+        Each CSS rule starts with a selector — or a list of selectors — in order to tell the browser which element or elements the rules should apply to. All the examples below are valid selectors or lists of selectors.</p>
+        <pre><code>h1 <span class="token literal-property property">a</span><span class="token operator">:</span>link <span class="token punctuation">.</span>manythings #onething <span class="token operator">*</span> <span class="token punctuation">.</span>box p <span class="token punctuation">.</span>box p<span class="token operator">:</span>first<span class="token operator">-</span>child h1<span class="token punctuation">,</span> h2<span class="token punctuation">,</span> <span class="token punctuation">.</span>intro </code></pre> <p>Try creating some CSS rules that use the selectors above. Add HTML to be styled by the selectors. If any of the syntax above is not familiar, try searching MDN.</p>
+      </article>
+    </section>
+    </main>
+   </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.1/marked.min.js" integrity="sha512-hzyXu3u+VDu/7vpPjRKFp9w33Idx7pWWNazPm+aCMRu26yZXFCby1gn1JxevVv3LDwnSbyKrvLo3JNdi4Qx1ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+      window.onloads = function(){
+        var articles = document.getElementsByTagName('article');
+        console.log(articles.length);
+        for (var i of articles){
+          console.log(articles[i]);
+          articles[i].innerHTML = marked.parse(articles[i].innerHTML);
+        }
+    }
+    </script>
+  </body>
+</html>
